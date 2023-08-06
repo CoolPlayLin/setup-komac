@@ -1,0 +1,13 @@
+name: "Setup Komac environment"
+description: "Setup a Komac environment to operate winget easily"
+author: "CoolPlayLin"
+inputs:
+  komac-version:
+    description: "The komac version you want to setup."
+    required: true
+outputs:
+  node-version:
+    description: "The installed komac version"
+runs:
+  using: "node16"
+  main: dist/index.js
