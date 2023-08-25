@@ -4,7 +4,7 @@
   "description": "Set up your Action Workflow with Komac to operate WinGet easily",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run -u",
     "format": "prettier --write **/*.ts *.yml"
   },
   "repository": {
@@ -19,12 +19,16 @@
   "homepage": "https://github.com/CoolPlayLin/setup-komac#readme",
   "devDependencies": {
     "@vercel/ncc": "^0.36.1",
-    "eslint": "^8.46.0",
-    "prettier": "^3.0.1",
-    "typescript": "^5.1.6"
+    "eslint": "^8.47.0",
+    "prettier": "^3.0.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.2"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
-  }
+    "@actions/github": "^5.1.1",
+    "@octokit/rest": "^20.0.1"
+  },
+  "packageManager": "pnpm@8.5.1"
 }
