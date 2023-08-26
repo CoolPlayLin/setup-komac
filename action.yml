@@ -4,7 +4,8 @@ author: "CoolPlayLin"
 inputs:
   komac-version:
     description: "The komac version you want to setup."
-    required: true
+    required: false
+    default: "latest"
 outputs:
   node-version:
     description: "The installed komac version"

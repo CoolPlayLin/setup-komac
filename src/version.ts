@@ -1,21 +1,24 @@
-import { Octokit } from "@octokit/rest";
-
-const api = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+import env from "./env";
 
 const LATEST_RELEASE = (
-  await api.repos.getLatestRelease({
-    owner: "russellbanks",
-    repo: "komac",
+  await env.api.repos.getLatestRelease({
+    owner: env.repo.owner,
+    repo: env.repo.repo,
   })
 ).data.html_url;
 
-function komac_version(version: string): string {
+/**
+ *
+ * verify version whether follow the rule
+ *
+ * @param version version that needs to be verify
+ * @returns verified version
+ */
+function version_verify(version: string): string {
   let v: string;
   v = version;
-  if (!(v === "newest" || v === "latest")) {
-    if (!version.startsWith("v")) {
+  if (!["newest", "latest"].includes(v)) {
+    if (!v.startsWith("v")) {
       v = "v" + v;
     }
     let v_list = v.split(".");
@@ -39,4 +42,4 @@ function komac_version(version: string): string {
   return v;
 }
 
-export { LATEST_RELEASE, komac_version };
+export { LATEST_RELEASE, version_verify };
