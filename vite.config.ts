@@ -6,7 +6,7 @@ console.log("VITEST_SEQUENCE_SEED", VITEST_SEQUENCE_SEED);
 
 export default defineConfig({
   test: {
-    setupFiles: ["__tests__/setup.ts"],
+    setupFiles: ["./__tests__/setup.ts"],
     reporters: "verbose",
     sequence: {
       seed: VITEST_SEQUENCE_SEED,
