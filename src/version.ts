@@ -9,7 +9,7 @@ const LATEST_RELEASE = (
 
 /**
  *
- * verify version whether follow the rule
+ * verify version whether follow the rule. if get unruled version, it returns latest
  *
  * @param version version that needs to be verify
  * @returns verified version
